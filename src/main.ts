@@ -8,7 +8,7 @@ console.log(PORT);
 import signJwt from "./utils/jwtSigner.ts";
 import verifyJwt from "./utils/jwtVerifier.ts";
 
-app.get("/sign", async (req: express, res: Response) => {
+app.get("/sign", async (req: Request, res: Response) => {
   const name = req.headers["name"];
   console.log(req.headers);
   const signedJwt = await signJwt(name);
